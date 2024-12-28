@@ -1,13 +1,13 @@
 const axios = require('axios');
 
 module.exports.config = {
-  name: 'gemini',
+  name: 'bot',
   version: '1.0.0',
   role: 0,
   hasPrefix: false,
-  aliases: ['astro', 'zodiac'],
-  description: "A Gemini API command",
-  usage: "Gemini [query]",
+  aliases: ['claude', 'bot'],
+  description: "A Claude Conversation API command",
+  usage: "bot [query]",
   credits: 'Developer',
   cooldown: 3,
 };
@@ -17,7 +17,7 @@ module.exports.run = async function({ api, event, args }) {
 
   if (!input) {
     api.sendMessage(
-      "[ Gemini ]\n\nPlease provide a query after 'gemini'. Example: 'gemini Tell me about Gemini.'",
+      "[ bot ]\n\nPlease provide a query after 'bot'. Example: 'bot Tell me about Open Ai.'",
       event.threadID,
       event.messageID
     );
@@ -25,7 +25,7 @@ module.exports.run = async function({ api, event, args }) {
   }
 
   api.sendMessage(
-    "[ Gemini ]\n\nPlease wait...",
+    "[ Bot ]\n\nPlease wait...",
     event.threadID,
     (err, info) => {
       if (err) return;
@@ -36,7 +36,7 @@ module.exports.run = async function({ api, event, args }) {
           const response = data.response;
 
           api.editMessage(
-            "[ Gemini ]\n\n" + response,
+            "[ Bot ]\n\n" + response,
             info.messageID
           );
         })
