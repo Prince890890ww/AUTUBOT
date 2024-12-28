@@ -83,7 +83,7 @@ module.exports.run = async function({ api, event, args }) {
               info.messageID
             );
           });
-        })
+       } })
         .catch(() => {
           api.editMessage(
             "[ Youtube Downloader ]\n\nError fetching girl edit API!",
