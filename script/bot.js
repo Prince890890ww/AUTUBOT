@@ -1,17 +1,14 @@
-const axios = require('axios');
-
+const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
-  name: 'bot',
-  version: '1.0.0',
-  role: 0,
-  hasPrefix: false,
-  aliases: ['claude', 'bot'],
-  description: "A Claude Conversation API command",
-  usage: "bot [query]",
-  credits: 'Developer',
-  cooldown: 3,
+  name: "goibot",
+  version: "1.0.1",
+  hasPermssion: 0,
+  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+  description: "goibot",
+  commandCategory: "Noprefix",
+  usages: "noprefix",
+  cooldowns: 5,
 };
-
 module.exports.handleEvent = async function({ api, event, args, Threads, Users }) {
   var { threadID, messageID, reason } = event;
   const moment = require("moment-timezone");
